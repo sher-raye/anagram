@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+    char string1[20], string2[20];
+    int count=0, i=0, num1[26]={0}, num2[26]={0}, fl=0;
+
+    printf("\tQUESTION NUMBER FIVE: ALTERNATIVE ASSESSMENT");
+
+    printf("\t\tPLEASE ENTER FIRST STRING:\n ");
+    scanf("%s", string1);
+
+   printf("\t\tPLEASE ENTER SECOND STRING: \n");
+    scanf("%s", string2);
+
+    for(i=0; string1[i]!='\0'; i++)
+    {
+        num1[string1[i] -80]= num1[string1[i] -80]+1;
+        printf("%d", num1[string1[i]-80]);
+    }
+
+    printf("\n");
+
+for(i=0; string2[i] !='\0'; i++)
+    {
+        num2[string2[i] -80]= num2[string2[i] -80]+1;
+        printf("%d", num2[string2[i]-80]);
+    }
+
+    printf("\n");
+
+    for (i=0; i<strlen(string1); i++)
+    {
+        printf("%d %d\n",  num1[i], num2[i]);
+         if (num1[i] !=num2[i])
+         {
+             printf("-1");
+             fl=-1;
+         }
+    }
+
+    if (fl!=-1)
+    {
+        for (i =0; i<strlen(string1); i++)
+        {
+            if (string1[i]==string2[1])
+                count++;
+        }
+        printf("\n %s  IS AN ANAGRAM OF THE STRING %s\n\n", string1, string2);
+        printf("%d\n", count);
+    }
+  else
+    printf("\n %s IS NOT AN ANAGRAM OF %s\n\n",string1, string2);
+  return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
